@@ -165,6 +165,11 @@ html {
   width: 100%;
 }
 
+footer {
+  width: 100%;
+  height: 9%;
+}
+
 .navbar { 
   align-items: center;
 }
@@ -185,6 +190,15 @@ body {
   height: 100%;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow: hidden;
+  background: linear-gradient(
+    to bottom,
+    #FFFFFF,
+    #FFFFFF 98%,
+    #EAE7E7 2%,
+    #EAE7E7
+  );
+  background-size: 100% 80px;
 }
 
 /* Works on Firefox */
@@ -211,30 +225,31 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
   height: 150px;
   width: 100px;
-  padding: 16px;
+  padding: 9px;
   border: 1px solid #ddd;
   border-radius: 10px;
   box-sizing: border-box;
-  background-color: #fff;
+  background-color: #013600;
   cursor: pointer;
-  box-shadow: 0 0 6px 2px rgba(#000, 0);
+  box-shadow: 0 0 6px 2px rgba(#73B881, 0);
   transition: box-shadow .2s ease;
   &:hover {
-    box-shadow: 0 0 6px 2px rgba(#000, .1);
+    box-shadow: 0 0 6px 2px rgba(#73B881, 1);
   }
   &__image {
     flex: 0 0 auto;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    border-radius: 10px 10px 0px 0px;
     background-color: #dedede;
     background-size: cover;
     background-position: 50%;
   }
   &__info {
+    color: #FFFFFF;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -252,5 +267,4 @@ body {
 p {
   margin-bottom: 0px !important;
 }
-
 </style>

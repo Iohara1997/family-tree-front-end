@@ -12,7 +12,6 @@
     @touchcancel="dragend"
     @touchleave="dragend"
     :style="{
-      overflow: enableDrag ? 'hidden' : null,
       cursor: dragAndDrop.mouseCursor,
       ...wrapperStyles,
     }"
@@ -20,9 +19,7 @@
     <div
       ref="vueFamilyTree"
       :style="{
-        position: 'relative',
-        top: '40px',
-        left: `${position.x}px`,
+        position: 'sticky',
       }"
     >
       <VueFamilyTreeBranch :tree="tree" @card-click="cardClick">
@@ -60,7 +57,10 @@ export default {
           ? {
               position: "relative",
               width: "100%",
-              height: "100%",
+              height: "81.9%",
+              overflow: "auto",
+              paddingTop: "20px",
+              paddingBottom: "20px",
             }
           : null;
       },
@@ -109,16 +109,6 @@ export default {
     },
     dragstart(event) {
       if (this.enableDrag) {
-        if (this.mobilePreventScroll) {
-          const breakpoint = this.mobilePreventScroll.breakpoint || 1024;
-          const selector = this.mobilePreventScroll.selector || "body";
-          const mql = window.matchMedia(`(max-width: ${breakpoint}px)`);
-          if (mql.matches) {
-            const $el = document.querySelector(selector);
-            this.previousMobileOverflowType = $el.style.overflow;
-            $el.style.overflow = "hidden";
-          }
-        }
         this.dragAndDrop.dragStartX = event.pageX || event.touches[0].pageX;
         this.dragAndDrop.dragStartY = event.pageY || event.touches[0].pageY;
         this.dragAndDrop.dragStarted = true;
@@ -155,11 +145,6 @@ export default {
       if (this.enableDrag) {
         this.dragAndDrop.dragStarted = false;
         this.dragAndDrop.mouseCursor = "default";
-        if (this.mobilePreventScroll) {
-          const selector = this.mobilePreventScroll.selector || "body";
-          const $el = document.querySelector(selector);
-          $el.style.overflow = this.previousMobileOverflowType;
-        }
         setTimeout(() => {
           this.preventMouseEvents = false;
         }, 150);

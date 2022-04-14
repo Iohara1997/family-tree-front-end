@@ -101,7 +101,7 @@ export default {
             width: 100%;
             height: 16px;
             right: 0;
-            border-top: 1px solid #ddd;
+            border-top: 3px solid #643C12;
           }
           &:after {
             content: '';
@@ -109,13 +109,13 @@ export default {
             top: 0;
             left: 50%;
             height: 16px;
-            width: 1px;
-            background-color: #ddd;
+            width: 3px;
+            background-color: #643C12;
           }
           &:first-child {
             &:before {
               width: 82px;
-              border-left: 1px solid #ddd;
+              border-left: 3px solid #643C12;
             }
             &:after {
               display: none;
@@ -124,7 +124,7 @@ export default {
           &:last-child {
             &:before {
               width: 82px;
-              border-right: 1px solid #ddd;
+              border-right: 3px solid #643C12;
               left: 0;
               right: auto;
             }
@@ -185,9 +185,9 @@ export default {
         top: 50px;
         left: 50%;
         margin-left: -16px;
-        height: 1px;
+        height: 3px;
         width: 32px;
-        background-color: #ddd;
+        background-color: #643C12;
       }
       .vue-family-tree__person {
         &:first-child {
@@ -205,9 +205,9 @@ export default {
               position: absolute;
               top: 50px;
               left: 0;
-              width: 1px;
+              width: 3px;
               height: calc(100% - 34px);
-              background-color: #ddd;
+              background-color: #643C12;
             }
             &:after {
               content: '';
@@ -217,7 +217,7 @@ export default {
               width: 6px;
               height: 6px;
               border-radius: 50%;
-              background-color: #ddd;
+              background-color: #ffb510;
             }
           }
         }
